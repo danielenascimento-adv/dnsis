@@ -827,7 +827,7 @@ function mesclar(a, b) {
 function aplicarPacote(d, A, nome) {
   const agora = new Date().toISOString();
   const has = c => new Set(d[c].map(x => x.id));
-  ['pessoas', 'processos', 'andamentos', 'prazos', 'conversas', 'leads', 'portal'].forEach(c => {
+  ['pessoas', 'processos', 'andamentos', 'prazos', 'conversas', 'leads', 'honorarios', 'portal'].forEach(c => {
     if (!A[c]) return; const ids = has(c);
     A[c].forEach(x => { if (!ids.has(x.id) && !(d.excluidos || {})[x.id]) d[c].push({ ...x, criado: x.criado || agora, _m: agora }) });
   });
